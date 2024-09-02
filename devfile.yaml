@@ -111,7 +111,7 @@ components:
         mkdir -p /projects/bin && cp /usr/bin/oc /projects/bin/oc && cp /usr/bin/kubectl /projects/bin/kubectl
     command:
       - /bin/bash
-    image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+    image: registry.redhat.io/openshift4/ose-cli:latest
     sourceMapping: /projects
     mountSources: true
     memoryRequest: 128M
