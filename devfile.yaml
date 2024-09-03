@@ -166,6 +166,16 @@ commands:
     workingDir: '/projects/che-demo-app-ui'
   id: node-dev-mode
 - exec:
+    commandLine: '/projects/che-demo-app/setUiEnv.sh -f=/projects/che-demo-app-ui/src/environments/environment.development.ts -s=/projects/che-demo-app-ui/env.dev -c=dev-tools -p=8080 -e=https-quarkus -v=backendApiUrl && npm install && NG_FORCE_TTY=false ng serve --disable-host-check --host 0.0.0.0 --inspect'
+    component: dev-tools
+    hotReloadCapable: true
+    group:
+      isDefault: true
+      kind: debug
+    label: Start NodeJS Development Local Service Debug (Hot reload)
+    workingDir: '/projects/che-demo-app-ui'
+  id: node-debug-mode
+- exec:
     commandLine: '/projects/che-demo-app/setUiEnvShared.sh -f=/projects/che-demo-app-ui/src/environments/environment.development.ts -s=/projects/che-demo-app-ui/env.dev -v=backendApiUrl && npm install && NG_FORCE_TTY=false ng serve --disable-host-check --host 0.0.0.0'
     component: dev-tools
     hotReloadCapable: true
